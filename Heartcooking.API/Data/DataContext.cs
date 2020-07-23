@@ -7,6 +7,6 @@ namespace Data
     {
         public DataContext(DbContextOptions<DataContext> options) : base(options) {}
 
-        public DbSet<Ingredient> Ingredients {get; set;}
+        public DbSet<Product> Ingredients {get; set;}
     }
 }
