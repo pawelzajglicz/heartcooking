@@ -1,23 +1,38 @@
 using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
 
+using Data;
+using Models;
+using System.Threading.Tasks;
+
 namespace Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
     public class ProductsController : ControllerBase
     {
+
+        private readonly IHeartcookingRepository repository;
+
+        public ProductsController(IHeartcookingRepository repository)
+        {
+            this.repository = repository;
+        }
         
         [HttpGet]
-        public ActionResult<IEnumerable<string>> Get()
+        public async Task<IActionResult> GetProducts()
         {
-            return new string[] {"product1", "product2"};
+            IEnumerable<Product> products = await repository.GetProducts();
+            
+            return Ok(products);
         }
 
         [HttpGet("{id}")]
-        public ActionResult<string> Get(int id)
+        public async Task<IActionResult> GetProduct(int id)
         {
-            return $"product with id {id}";
+            Product product = await repository.GetProduct(id);
+
+            return Ok(product);
         }
     }
 }

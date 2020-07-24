@@ -28,6 +28,7 @@ namespace Heartcooking.API
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<DataContext>(x => x.UseMySql(Configuration.GetConnectionString("DefaultConnection")));
+            services.AddScoped<IHeartcookingRepository, HeartcookingRepository>();
             services.AddControllers();
         }
 
