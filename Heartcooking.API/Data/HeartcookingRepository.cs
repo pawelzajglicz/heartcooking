@@ -44,7 +44,7 @@ namespace Data
 
         public void Delete<T>(T entity) where T : class
         {
-            logger.LogTrace($"Deletingentity {entity.ToString()}");
+            logger.LogTrace($"Deleting entity {entity.ToString()}");
             context.Remove(entity);
         }
 
