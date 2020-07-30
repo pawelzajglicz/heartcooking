@@ -1,3 +1,4 @@
+using Heartcooking.API.Models;
 using Microsoft.EntityFrameworkCore;
 using Models;
 
@@ -8,5 +9,6 @@ namespace Data
         public DataContext(DbContextOptions<DataContext> options) : base(options) {}
 
         public DbSet<Product> Products {get; set;}
+        public DbSet<User> Users {get; set;}
     }
 }
