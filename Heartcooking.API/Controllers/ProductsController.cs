@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
 
 using Data;
-using Models;
+using Heartcooking.API.Models;
 using System.Threading.Tasks;
 
 namespace Controllers

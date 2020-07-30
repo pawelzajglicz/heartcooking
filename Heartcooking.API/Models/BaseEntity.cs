@@ -1,5 +1,3 @@
-using System;
-
 namespace Heartcooking.API.Models
 {
     public class BaseEntity

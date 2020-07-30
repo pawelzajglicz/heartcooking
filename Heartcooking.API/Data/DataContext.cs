@@ -1,6 +1,5 @@
 using Heartcooking.API.Models;
 using Microsoft.EntityFrameworkCore;
-using Models;
 
 namespace Data
 {
