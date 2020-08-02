@@ -1,0 +1,23 @@
+pool:
+  name: Azure Pipelines
+steps:
+- task: DotNetCoreCLI@2
+  displayName: 'dotnet restore'
+  inputs:
+    command: restore
+    projects: Heartcooking.API/Heartcooking.API.csproj
+
+- task: DotNetCoreCLI@2
+  displayName: 'dotnet build'
+  inputs:
+    projects: Heartcooking.API/Heartcooking.API.csproj
+    arguments: '--configuration Release'
+
+- task: DotNetCoreCLI@2
+  displayName: 'dotnet publish'
+  inputs:
+    command: publish
+    publishWebProjects: false
+    projects: Heartcooking.API/Heartcooking.API.csproj
+    arguments: '--configuration Release'
+
