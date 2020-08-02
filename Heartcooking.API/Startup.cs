@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Autofac;
 using Data;
 using Heartcooking.API.Data;
+using Heartcooking.API.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -34,6 +35,7 @@ namespace Heartcooking.API
         {
             services.AddDbContext<DataContext>(x => x.UseMySql(Configuration.GetConnectionString("DefaultConnection")));
             services.AddScoped<IAuthRepository, AuthRepository>();
+            services.AddScoped<IAuthService, AuthService>();
             services.AddScoped<IHeartcookingRepository, HeartcookingRepository>();
             services.AddControllers();
             services.AddCors();

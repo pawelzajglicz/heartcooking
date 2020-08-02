@@ -1,11 +1,14 @@
 using System;
 using System.IdentityModel.Tokens.Jwt;
+using System.Security.Authentication;
 using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
 using Heartcooking.API.Data;
 using Heartcooking.API.Dtos;
+using Heartcooking.API.Exceptions;
 using Heartcooking.API.Models;
+using Heartcooking.API.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
@@ -16,30 +19,31 @@ namespace Heartcooking.API.Controllers
     [ApiController]
     public class AuthController : ControllerBase
     {
-        private readonly IAuthRepository repository;
+        private readonly IAuthService authService;
         private readonly IConfiguration configuration;
 
-        public AuthController(IAuthRepository repository, IConfiguration configuration)
+        public AuthController(IAuthService authService, IConfiguration configuration)
         {
-            this.repository = repository;
+            this.authService = authService;
             this.configuration = configuration;
         }
 
         [HttpPost("register")]
         public async Task<IActionResult> Register(UserForRegisterDto userForRegisterDto)
         {
-
-            userForRegisterDto.Username = userForRegisterDto.Username.ToLower();
-
-            if (await repository.UsernameTaken(userForRegisterDto.Username))
-                return BadRequest("This username has been taken.");
-
-            User userToCreate = new User 
+            User userToRegister = new User 
             {
                 Username = userForRegisterDto.Username
             };
 
-            User createdUser = await repository.Register(userToCreate, userForRegisterDto.Password);
+            try 
+            {
+                await authService.Register(userToRegister, userForRegisterDto.Password);
+            } 
+            catch (UsernameTakenException exc) 
+            {
+                return BadRequest(exc.Message);
+            }
 
             return StatusCode(201);
         }
@@ -47,36 +51,22 @@ namespace Heartcooking.API.Controllers
         [HttpPost("login")]
         public async Task<IActionResult> Login(UserForLoginDto userForLogin)
         {
-            User userFromRepo = await repository.Login(userForLogin.Username.ToLower(), userForLogin.Password);
+            User userToLogin = new User 
+            {
+                Username = userForLogin.Username
+            };
 
-            if (userFromRepo == null)
+            string token;
+            try 
+            {
+                token = await authService.Login(userToLogin, userForLogin.Password);
+            } 
+            catch (AuthenticationException exc) 
+            {
                 return Unauthorized();
+            }
 
-            var claims = new[]
-            {
-                new Claim(ClaimTypes.NameIdentifier, userFromRepo.Id.ToString()),
-                new Claim(ClaimTypes.Name, userFromRepo.Username)
-            };
-
-            SymmetricSecurityKey key = new SymmetricSecurityKey(Encoding.UTF8
-                .GetBytes(configuration.GetSection("AppSettings:Token").Value));
-
-            SigningCredentials credentials = new SigningCredentials(key, SecurityAlgorithms.HmacSha512Signature);
-
-            var tokenDescriptor = new SecurityTokenDescriptor
-            {
-                Subject = new ClaimsIdentity(claims),
-                Expires = DateTime.UtcNow.AddDays(1),
-                SigningCredentials = credentials
-            };
-
-            var tokenHandler = new JwtSecurityTokenHandler();
-
-            var token = tokenHandler.CreateToken(tokenDescriptor);
-
-            return Ok(new {
-                token = tokenHandler.WriteToken(token)
-            });
+            return Ok(token);
         }
     }
 }
