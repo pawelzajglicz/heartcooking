@@ -68,9 +68,12 @@ namespace Heartcooking.API.Data
             }
         }
 
-        public Task<bool> UsernameTaken(string username)
+        public async Task<bool> UsernameTaken(string username)
         {
-            throw new System.NotImplementedException();
+            if (await context.Users.AnyAsync(user => user.Username == username))
+                return true;
+
+            return false;
         }
     }
 }
