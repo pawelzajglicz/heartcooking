@@ -3,6 +3,7 @@ using System.Security.Cryptography;
 using System.Threading.Tasks;
 using Data;
 using Heartcooking.API.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace Heartcooking.API.Data
 {
@@ -15,9 +16,33 @@ namespace Heartcooking.API.Data
             this.context = context;
         }
 
-        public Task<User> Login(string username, string password)
+        public async Task<User> Login(string username, string password)
         {
-            throw new System.NotImplementedException();
+            User user = await context.Users.FirstOrDefaultAsync(user => user.Username == username);
+
+            if (user == null)
+                return null;
+
+            if (!VerivyPasswordHash(password, user.PasswordHash, user.PasswordSalt))
+                return null;
+
+            return user;
+        }
+
+        private bool VerivyPasswordHash(string password, byte[] passwordHash, byte[] passwordSalt)
+        {
+            using(HMAC hmac = new System.Security.Cryptography.HMACSHA512(passwordSalt))
+            {
+                byte[] computedHash = hmac.ComputeHash(System.Text.Encoding.UTF8.GetBytes(password));
+
+                for (int i=0; i < computedHash.Length; i++)
+                {
+                    if (computedHash[i] != passwordHash[i])
+                        return false;
+                }
+            }
+
+            return true;
         }
 
         public async Task<User> Register(User user, string password)
