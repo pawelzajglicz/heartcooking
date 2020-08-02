@@ -1,4 +1,4 @@
-namespace Models
+namespace Heartcooking.API.Models
 {
     public class Product
     {

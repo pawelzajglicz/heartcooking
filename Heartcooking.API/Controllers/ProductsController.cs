@@ -2,11 +2,13 @@ using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
 
 using Data;
-using Models;
+using Heartcooking.API.Models;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Controllers
 {
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class ProductsController : ControllerBase
