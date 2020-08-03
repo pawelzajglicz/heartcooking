@@ -17,3 +17,19 @@ steps:
     verbose: false
     customCommand: 'run build -- --prod'
 
+- task: Npm@1
+  displayName: 'npm test-ci'
+  inputs:
+    command: custom
+    workingDir: 'Heartcooking-SPA'
+    verbose: false
+    customCommand: 'run test-ci'
+  continueOnError: true
+
+- task: PublishTestResults@2
+  displayName: 'Publish Test Results **/TESTS-*.xml'
+  inputs:
+    testResultsFiles: '**/TESTS-*.xml'
+    searchFolder: '$(System.DefaultWorkingDirectory)/Heartcooking-SPA/junit'
+    failTaskOnFailedTests: true
+
