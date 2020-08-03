@@ -33,3 +33,10 @@ steps:
     searchFolder: '$(System.DefaultWorkingDirectory)/Heartcooking-SPA/junit'
     failTaskOnFailedTests: true
 
+- task: PublishCodeCoverageResults@1
+  displayName: 'Publish code coverage from Heartcooking-SPA/coverage/Heartcooking-SPA/cobertura-coverage.xml'
+  inputs:
+    codeCoverageTool: Cobertura
+    summaryFileLocation: 'Heartcooking-SPA/coverage/Heartcooking-SPA/cobertura-coverage.xml'
+    failIfCoverageEmpty: true
+
