@@ -18,7 +18,7 @@ steps:
   inputs:
     command: test
     projects: 'Heartcooking.API.tests\Heartcooking.API.UnitTests\Heartcooking.API.UnitTests.csproj'
-    arguments: '--configuration Release /p:CollectCoverage=true /p:CoverletOutputFormat=cobertura'
+    arguments: '--configuration Release /p:CollectCoverage=true /p:CoverletOutputFormat=cobertura /p:Exclude="[xunit*]*"'
 
 - task: Palmmedia.reportgenerator.reportgenerator-build-release-task.reportgenerator@4
   displayName: ReportGenerator
