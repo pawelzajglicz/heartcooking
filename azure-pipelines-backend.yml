@@ -18,7 +18,19 @@ steps:
   inputs:
     command: test
     projects: 'Heartcooking.API.tests\Heartcooking.API.UnitTests\Heartcooking.API.UnitTests.csproj'
-    arguments: '--configuration Release --collect "Code coverage"'
+    arguments: '--configuration Release /p:CollectCoverage=true /p:CoverletOutputFormat=cobertura'
+
+- task: Palmmedia.reportgenerator.reportgenerator-build-release-task.reportgenerator@4
+  displayName: ReportGenerator
+  inputs:
+    reports: '**/coverage.cobertura.xml'
+
+- task: PublishCodeCoverageResults@1
+  displayName: 'Publish code coverage from **/coverage.cobertura.xml'
+  inputs:
+    codeCoverageTool: Cobertura
+    summaryFileLocation: '**/coverage.cobertura.xml'
+    reportDirectory: CoverageReport
 
 - task: DotNetCoreCLI@2
   displayName: 'dotnet publish'
