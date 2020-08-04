@@ -1,3 +1,5 @@
+import { UnderConstructionComponent } from './under-construction/under-construction.component';
+import { ProductComponent } from './product/product.component';
 import { TestBed, async } from '@angular/core/testing';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { AppComponent } from './app.component';
@@ -6,7 +8,9 @@ describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [
-        AppComponent
+        AppComponent,
+        ProductComponent,
+        UnderConstructionComponent
       ],
       imports: [
         HttpClientTestingModule
