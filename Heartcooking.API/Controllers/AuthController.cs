@@ -11,6 +11,7 @@ using Heartcooking.API.Models;
 using Heartcooking.API.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Logging;
 using Microsoft.IdentityModel.Tokens;
 
 namespace Heartcooking.API.Controllers
@@ -21,16 +22,19 @@ namespace Heartcooking.API.Controllers
     {
         private readonly IAuthService authService;
         private readonly IConfiguration configuration;
+        private readonly ILogger<AuthController> logger;
 
-        public AuthController(IAuthService authService, IConfiguration configuration)
+        public AuthController(IAuthService authService, IConfiguration configuration, ILogger<AuthController> logger)
         {
             this.authService = authService;
             this.configuration = configuration;
+            this.logger = logger;
         }
 
         [HttpPost("register")]
         public async Task<IActionResult> Register(UserForRegisterDto userForRegisterDto)
         {
+            logger.LogInformation("Starting register user");
             User userToRegister = new User 
             {
                 Username = userForRegisterDto.Username
@@ -42,6 +46,7 @@ namespace Heartcooking.API.Controllers
             } 
             catch (UsernameTakenException exc) 
             {
+                logger.LogDebug($"Username {userForRegisterDto.Username} was taken");
                 return BadRequest(exc.Message);
             }
 
@@ -51,6 +56,7 @@ namespace Heartcooking.API.Controllers
         [HttpPost("login")]
         public async Task<IActionResult> Login(UserForLoginDto userForLogin)
         {
+            logger.LogInformation($"Starting logging user with name {userForLogin.Username}");
             User userToLogin = new User 
             {
                 Username = userForLogin.Username
@@ -63,9 +69,11 @@ namespace Heartcooking.API.Controllers
             } 
             catch (AuthenticationException exc) 
             {
+                logger.LogDebug($"At logging user with name {userForLogin.Username} occured AuthenticationException with message {exc.Message}");
                 return Unauthorized();
             }
 
+            logger.LogInformation($"User with name {userForLogin.Username} logged succesfully");
             return Ok(token);
         }
     }
