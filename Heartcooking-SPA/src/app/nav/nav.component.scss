@@ -1,0 +1,18 @@
+@import '../../variables.scss';
+
+.navigation {
+  background-color: $dark-green;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  padding: 16px;
+
+  display: flex;
+  justify-content: center;
+}
+
+.navigation__link {
+  color: $dark-blue;
+  display: block;
+  margin: 0 16px;
+}
