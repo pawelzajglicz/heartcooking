@@ -54,3 +54,15 @@
   font-weight: 500;
   margin: 16px;
 }
+
+.title {
+  position: fixed;
+  left: 40px;
+
+  color: $ruby;
+  font-family: $lemonada;
+  font-size: 32px;
+  font-weight: 800;
+
+  padding: 4px;
+}
