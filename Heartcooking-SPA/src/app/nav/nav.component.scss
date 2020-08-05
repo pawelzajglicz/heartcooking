@@ -1,4 +1,4 @@
-@import '../../variables.scss';
+@import '../../global-elements.scss';
 
 .navigation {
   background-color: $dark-green;
@@ -14,5 +14,6 @@
 .navigation__link {
   color: $dark-blue;
   display: block;
+  font-family: $arima;
   margin: 0 16px;
 }
