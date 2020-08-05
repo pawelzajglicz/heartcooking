@@ -25,3 +25,5 @@ One of the features will be creating shopping list from chosen meals  <br>
 (Project is still at early development stage)
 
 ![Project Preview](preview.PNG)
+<br><br>
+![Project Preview without under construction](preview-without-under-construction.PNG)
