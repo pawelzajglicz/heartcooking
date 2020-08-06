@@ -6,6 +6,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { NavComponent } from './nav/nav.component';
 import { ProductComponent } from './product/product.component';
+import { AuthService } from './services/auth.service';
 import { UnderConstructionComponent } from './under-construction/under-construction.component';
 
 @NgModule({
@@ -20,7 +21,9 @@ import { UnderConstructionComponent } from './under-construction/under-construct
       FormsModule,
       HttpClientModule
    ],
-   providers: [],
+   providers: [
+     AuthService
+   ],
    bootstrap: [
       AppComponent
    ]
