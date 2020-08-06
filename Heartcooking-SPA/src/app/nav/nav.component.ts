@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UserForLogin } from './../models/user-for-login';
 
 @Component({
   selector: 'app-nav',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavComponent implements OnInit {
 
+  userForLogin: UserForLogin = {};
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  login() {
+    console.log(this.userForLogin);
   }
 
 }
