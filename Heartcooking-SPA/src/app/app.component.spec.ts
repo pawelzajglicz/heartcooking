@@ -1,5 +1,7 @@
 import { TestBed, async } from '@angular/core/testing';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { FormsModule } from '@angular/forms';
+
 import { AppComponent } from './app.component';
 import { NavComponent } from './nav/nav.component';
 import { ProductComponent } from './product/product.component';
@@ -15,6 +17,7 @@ describe('AppComponent', () => {
         UnderConstructionComponent
       ],
       imports: [
+        FormsModule,
         HttpClientTestingModule
       ]
     }).compileComponents();

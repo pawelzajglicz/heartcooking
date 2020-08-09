@@ -8,10 +8,10 @@
   <a class="navigation__link" href="#">Lista zakupów</a>
   <a class="navigation__link" href="#">Użytkownicy</a>
 
-  <form class="form">
-    <input type="text" class="form__input" placeholder="Nazwa użytkownika" aria-label="Nazwa użytkownika">
-    <input type="password" class="form__input form__input--last" placeholder="Hasło" aria-label="Hasło">
-    <button class="form__button">Zaloguj</button>
+  <form #loginForm="ngForm" class="form" (ngSubmit)="login()">
+    <input type="text" name="username" required class="form__input" placeholder="Nazwa użytkownika" aria-label="Nazwa użytkownika" [(ngModel)]="userForLogin.username">
+    <input type="password" name="password" required class="form__input form__input--last" placeholder="Hasło" aria-label="Hasło" [(ngModel)]="userForLogin.password">
+    <button [disabled]="!loginForm.valid" class="form__button">Zaloguj</button>
     <button class="form__button">Zarejestruj</button>
   </form>
 
