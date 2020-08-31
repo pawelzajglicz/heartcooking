@@ -1,8 +1,9 @@
-import { UserForLogin } from './../models/user-for-login';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 
+import { UserForLogin } from './../models/user-for-login';
+import { UserLoginResponse } from './../models/user-login-response';
 import { environment } from '../../environments/environment';
 
 @Injectable({
@@ -17,9 +18,8 @@ export class AuthService {
   login(userForLogin: UserForLogin) {
     return this.http.post(this.baseUrl + 'login', userForLogin)
       .pipe(
-        map((response: any) => {
+        map((user: UserLoginResponse) => {
 
-          const user = response;
           if (user) {
             localStorage.setItem('token', user.token);
           }
