@@ -12,7 +12,7 @@
   <button mat-button [matMenuTriggerFor]="menu" class="menu-button">Menu</button>
   <mat-menu  #menu="matMenu" yPosition="below">
     <button mat-menu-item><i class="fa fa-user menu-item-icon"></i>Edytuj Profil</button>
-    <button mat-menu-item><i class="fa fa-sign-out menu-item-icon"></i>Wyloguj</button>
+    <button mat-menu-item (click)="logout()"><i class="fa fa-sign-out menu-item-icon"></i>Wyloguj</button>
   </mat-menu>
 </ng-container>
 
