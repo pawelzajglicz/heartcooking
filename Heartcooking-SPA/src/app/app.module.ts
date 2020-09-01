@@ -1,7 +1,9 @@
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { MatMenuModule } from '@angular/material/menu';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
 import { NavComponent } from './nav/nav.component';
@@ -17,9 +19,11 @@ import { UnderConstructionComponent } from './under-construction/under-construct
       UnderConstructionComponent
    ],
    imports: [
+      BrowserAnimationsModule,
       BrowserModule,
       FormsModule,
-      HttpClientModule
+      HttpClientModule,
+      MatMenuModule
    ],
    providers: [
      AuthService

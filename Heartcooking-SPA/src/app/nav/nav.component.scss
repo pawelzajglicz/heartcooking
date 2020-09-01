@@ -41,6 +41,24 @@
   cursor: default;
 }
 
+.menu-button {
+  height: 40px;
+  width: 80px;
+
+  background-color: lightgreen;
+  border-radius: 5px;
+  color: $dark-blue;
+  font-family: $arima;
+  font-weight: 500;
+
+  position: fixed;
+  right: 80px;
+}
+
+.menu-item-icon {
+  margin-right: 10px;
+}
+
 .navigation {
   background-color: $dark-green;
   position: sticky;
