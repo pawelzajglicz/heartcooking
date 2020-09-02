@@ -5,10 +5,8 @@ a {
 }
 
 .form {
-  position: fixed;
-  right: 10px;
-
   display: flex;
+  display: inline;
   padding: 4px;
 }
 
@@ -34,6 +32,7 @@ a {
   cursor: pointer;
 
   color: $dark-blue;
+  display: inline;
   font-family: $arima;
   font-weight: 500;
   margin: 0 2px;
@@ -54,9 +53,6 @@ a {
   color: $dark-blue;
   font-family: $arima;
   font-weight: 500;
-
-  position: fixed;
-  right: 80px;
 }
 
 .menu-item-icon {
@@ -71,7 +67,7 @@ a {
   padding: 16px;
 
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
 }
 
@@ -83,10 +79,19 @@ a {
   margin: 16px;
 }
 
-.title {
-  position: fixed;
-  left: 40px;
+.navigation__links {
+  display: flex;
+}
 
+.navigation__login-register {
+
+}
+
+.navigation__menu {
+
+}
+
+.navigation__title {
   color: $ruby;
   font-family: $lemonada;
   font-size: 32px;
