@@ -1,5 +1,9 @@
 @import '../../global-elements.scss';
 
+a {
+  text-decoration: none;
+}
+
 .form {
   position: fixed;
   right: 10px;
