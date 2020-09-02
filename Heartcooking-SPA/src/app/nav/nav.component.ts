@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+
 import { UserForLogin } from './../models/user-for-login';
 import { AuthService } from '../services/auth.service';
 
@@ -11,7 +13,8 @@ export class NavComponent implements OnInit {
 
   userForLogin: UserForLogin = {};
 
-  constructor(private authService: AuthService) { }
+  constructor(private authService: AuthService,
+              private router: Router) { }
 
   ngOnInit() {
   }
@@ -32,6 +35,6 @@ export class NavComponent implements OnInit {
 
   logout() {
     localStorage.removeItem('token');
-    console.log('logged out');
+    this.router.navigate(['/home']);
   }
 }
