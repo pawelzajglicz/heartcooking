@@ -74,7 +74,10 @@ namespace Heartcooking.API.Controllers
             }
 
             logger.LogInformation($"User with name {userForLogin.Username} logged succesfully");
-            return Ok(token);
+            return Ok(new 
+                {
+                    token = token
+                });
         }
     }
 }

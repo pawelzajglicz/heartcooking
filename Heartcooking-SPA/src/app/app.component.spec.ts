@@ -1,10 +1,14 @@
-import { TestBed, async } from '@angular/core/testing';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { TestBed, async } from '@angular/core/testing';
 import { FormsModule } from '@angular/forms';
+import { MatMenuModule } from '@angular/material/menu';
+import { RouterTestingModule } from '@angular/router/testing';
 
 import { AppComponent } from './app.component';
+import { HomeComponent } from './home/home.component';
 import { NavComponent } from './nav/nav.component';
 import { ProductComponent } from './product/product.component';
+import { RegisterComponent } from './register/register.component';
 import { UnderConstructionComponent } from './under-construction/under-construction.component';
 
 describe('AppComponent', () => {
@@ -12,13 +16,17 @@ describe('AppComponent', () => {
     TestBed.configureTestingModule({
       declarations: [
         AppComponent,
+        HomeComponent,
         NavComponent,
         ProductComponent,
+        RegisterComponent,
         UnderConstructionComponent
       ],
       imports: [
         FormsModule,
-        HttpClientTestingModule
+        HttpClientTestingModule,
+        MatMenuModule,
+        RouterTestingModule
       ]
     }).compileComponents();
   }));
@@ -42,3 +50,4 @@ describe('AppComponent', () => {
     expect(compiled.querySelector('.application-title').textContent).toContain('Heartcooking');
   });
 });
+

@@ -2,30 +2,26 @@
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { FormsModule } from '@angular/forms';
-import { MatMenuModule } from '@angular/material/menu';
-import { RouterTestingModule } from '@angular/router/testing';
 
-import { NavComponent } from './nav.component';
+import { RegisterComponent } from './register.component';
 
-describe('NavComponent', () => {
-  let component: NavComponent;
-  let fixture: ComponentFixture<NavComponent>;
+describe('RegisterComponent', () => {
+  let component: RegisterComponent;
+  let fixture: ComponentFixture<RegisterComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ NavComponent ],
+      declarations: [ RegisterComponent ],
       imports: [
         HttpClientTestingModule,
-        FormsModule,
-        MatMenuModule,
-        RouterTestingModule
+        FormsModule
        ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(NavComponent);
+    fixture = TestBed.createComponent(RegisterComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
@@ -34,3 +30,4 @@ describe('NavComponent', () => {
     expect(component).toBeTruthy();
   });
 });
+

@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+
 import { UserForLogin } from './../models/user-for-login';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-nav',
@@ -10,13 +13,28 @@ export class NavComponent implements OnInit {
 
   userForLogin: UserForLogin = {};
 
-  constructor() { }
+  constructor(private authService: AuthService,
+              private router: Router) { }
 
   ngOnInit() {
   }
 
   login() {
-    console.log(this.userForLogin);
+
+    this.authService.login(this.userForLogin).subscribe(next => {
+      console.log('Logged in successfully');
+    }, error => {
+      console.log('Failed to login');
+    });
   }
 
+  loggedIn(): boolean {
+    const token = localStorage.getItem('token');
+    return !!token;
+  }
+
+  logout() {
+    localStorage.removeItem('token');
+    this.router.navigate(['/home']);
+  }
 }
