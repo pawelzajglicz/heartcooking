@@ -22,4 +22,19 @@
   font-weight: 500;
   margin: 0 2px;
   padding: 8px 12px;
+  width: 200px;
+}
+
+.form-group {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin: 8px;
+}
+
+.register-form {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
 }
