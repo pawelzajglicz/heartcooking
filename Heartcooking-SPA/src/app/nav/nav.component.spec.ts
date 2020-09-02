@@ -1,8 +1,9 @@
 /* tslint:disable:no-unused-variable */
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { By } from '@angular/platform-browser';
-import { DebugElement } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { MatMenuModule } from '@angular/material/menu';
+import { RouterTestingModule } from '@angular/router/testing';
 
 import { NavComponent } from './nav.component';
 
@@ -13,7 +14,12 @@ describe('NavComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ NavComponent ],
-      imports: [ FormsModule ]
+      imports: [
+        HttpClientTestingModule,
+        FormsModule,
+        MatMenuModule,
+        RouterTestingModule
+       ]
     })
     .compileComponents();
   }));
