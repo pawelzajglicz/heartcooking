@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 
 import { UserForLogin } from './../models/user-for-login';
+import { UserForRegister } from './../models/user-for-register';
 import { UserLoginResponse } from './../models/user-login-response';
 import { environment } from '../../environments/environment';
 
@@ -25,5 +26,9 @@ export class AuthService {
           }
         })
       );
+  }
+
+  register(model: UserForRegister) {
+    return this.http.post(this.baseUrl + 'register', model);
   }
 }

@@ -10,13 +10,15 @@ import { NavComponent } from './nav/nav.component';
 import { ProductComponent } from './product/product.component';
 import { AuthService } from './services/auth.service';
 import { UnderConstructionComponent } from './under-construction/under-construction.component';
+import { RegisterComponent } from './register/register.component';
 
 @NgModule({
-   declarations: [
+   declarations: [	
       AppComponent,
       NavComponent,
       ProductComponent,
-      UnderConstructionComponent
+      UnderConstructionComponent,
+      RegisterComponent
    ],
    imports: [
       BrowserAnimationsModule,
