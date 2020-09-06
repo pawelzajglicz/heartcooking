@@ -21,6 +21,13 @@ One of the features will be creating shopping list from chosen meals  <br>
 
 ### Frontend build: [![Build Status](https://dev.azure.com/pawelzajglicz/Heartcooking/_apis/build/status/Heartcooking-CI-frontend?branchName=master)](https://dev.azure.com/pawelzajglicz/Heartcooking/_build/latest?definitionId=7&branchName=master)
 
+<br>
+
+## Link to Kanban board on Trello 
+
+[Kanban board](https://trello.com/b/lLBywiK5/heartcooking)
+
+<br>
 ## Preview 
 (Project is still at early development stage)
 
