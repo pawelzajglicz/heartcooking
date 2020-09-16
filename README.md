@@ -28,6 +28,14 @@ One of the features will be creating shopping list from chosen meals  <br>
 [Kanban board](https://trello.com/b/lLBywiK5/heartcooking)
 
 <br>
+
+## Link to Azure DevOps project
+[Azure DevOps](https://dev.azure.com/pawelzajglicz/Heartcooking)
+
+### Azure boards: [![Board Status](https://dev.azure.com/pawelzajglicz/65a7ea9d-8934-4d75-86db-f3318496e8b7/e4852de2-dd59-4222-b197-f4e9c5a0e472/_apis/work/boardbadge/8550b3e9-70a4-4557-96b9-064d6d3c85dc?columnOptions=1)](https://dev.azure.com/pawelzajglicz/65a7ea9d-8934-4d75-86db-f3318496e8b7/_boards/board/t/e4852de2-dd59-4222-b197-f4e9c5a0e472/Microsoft.RequirementCategory/) 
+
+<br>
+
 ## Preview 
 (Project is still at early development stage)
 
