@@ -48,3 +48,16 @@ steps:
     summaryFileLocation: 'Heartcooking-SPA/coverage/Heartcooking-SPA/cobertura-coverage.xml'
     failIfCoverageEmpty: true
 
+- task: ArchiveFiles@2
+  displayName: 'Archive Heartcooking-SPA/dist/Heartcooking-SPA'
+  inputs:
+    rootFolderOrFile: 'Heartcooking-SPA/dist/Heartcooking-SPA'
+    includeRootFolder: false
+    archiveFile: '$(Build.ArtifactStagingDirectory)/Heartcooking-SPA/Heartcooking-SPA.zip'
+
+- task: PublishBuildArtifacts@1
+  displayName: 'Publish Artifact: Heartcooking-SPA'
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)/Heartcooking-SPA'
+    ArtifactName: 'Heartcooking-SPA'
+

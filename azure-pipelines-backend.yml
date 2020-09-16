@@ -47,5 +47,11 @@ steps:
     command: publish
     publishWebProjects: false
     projects: Heartcooking.API/Heartcooking.API.csproj
-    arguments: '--configuration Release'
+    arguments: '--configuration Release -o $(Build.ArtifactStagingDirectory)/Heartcooking.API'
+
+- task: PublishBuildArtifacts@1
+  displayName: 'Publish Artifact: Heartcooking.API'
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)/Heartcooking.API'
+    ArtifactName: Heartcooking.API
 
