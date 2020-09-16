@@ -2,6 +2,7 @@ import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { TestBed, async } from '@angular/core/testing';
 import { FormsModule } from '@angular/forms';
 import { MatMenuModule } from '@angular/material/menu';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterTestingModule } from '@angular/router/testing';
 
 import { AppComponent } from './app.component';
@@ -23,6 +24,7 @@ describe('AppComponent', () => {
         UnderConstructionComponent
       ],
       imports: [
+        BrowserAnimationsModule,
         FormsModule,
         HttpClientTestingModule,
         MatMenuModule,
