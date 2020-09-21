@@ -36,6 +36,11 @@ One of the features will be creating shopping list from chosen meals  <br>
 
 <br>
 
+## Link to developer version of application deployed on Azure
+[Early developer version of application](https://heartcooking-front.azurewebsites.net)
+
+<br>
+
 ## Preview 
 (Project is still at early development stage)
 
