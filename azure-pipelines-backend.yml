@@ -49,9 +49,23 @@ steps:
     projects: Heartcooking.API/Heartcooking.API.csproj
     arguments: '--configuration Release -o $(Build.ArtifactStagingDirectory)/Heartcooking.API'
 
+- script: |
+   dotnet tool install --global dotnet-ef
+   
+  displayName: 'Command Line Script'
+
+- script: 'dotnet ef migrations script -i -o %BUILD_ARTIFACTSTAGINGDIRECTORY%\migrate\scripts.sql --project Heartcooking.API/Heartcooking.API.csproj --startup-project Heartcooking.API/Heartcooking.API.csproj'
+  displayName: 'Command Line Script'
+
 - task: PublishBuildArtifacts@1
   displayName: 'Publish Artifact: Heartcooking.API'
   inputs:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)/Heartcooking.API'
     ArtifactName: Heartcooking.API
+
+- task: PublishBuildArtifacts@1
+  displayName: 'Publish Artifact: migration-scripts'
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)/migrate'
+    ArtifactName: 'migration-scripts'
 
