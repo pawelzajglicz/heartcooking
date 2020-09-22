@@ -83,6 +83,16 @@ a {
   display: flex;
 }
 
+.navigation__login-error {
+  color: darkred;
+  font-family: $arima;
+  font-size: 12px;
+  font-weight: 400;
+  margin-left: 16px;
+  margin-top: 4px;
+  position: absolute;
+}
+
 .navigation__login-register {
 
 }

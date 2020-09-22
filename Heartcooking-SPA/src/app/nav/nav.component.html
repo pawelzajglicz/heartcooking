@@ -35,5 +35,7 @@
     </form>
     <a [routerLink]="['/register']" routerLinkActive="router-link-active"><button class="form__button">Zarejestruj</button></a>
 
+    <div class="navigation__login-error" *ngIf="isFailedLoginInfoToShow()">Nieprawidłowa nazwa użytkownika lub hasło</div>
+
   </div>
 </nav>

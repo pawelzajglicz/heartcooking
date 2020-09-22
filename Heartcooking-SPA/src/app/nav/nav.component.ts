@@ -13,6 +13,7 @@ import { AuthService } from '../services/auth.service';
 export class NavComponent implements OnInit {
 
   userForLogin: UserForLogin = {};
+  wasFailedLogin = false;
 
   constructor(private alertifyService: AlertifyService,
               private authService: AuthService,
@@ -21,12 +22,18 @@ export class NavComponent implements OnInit {
   ngOnInit() {
   }
 
+  isFailedLoginInfoToShow(): boolean {
+    return this.wasFailedLogin && !this.loggedIn();
+  }
+
   login() {
 
     this.authService.login(this.userForLogin).subscribe(next => {
       this.alertifyService.success('Zalogowano pomyślnie');
       this.router.navigate(['/home']);
+      this.wasFailedLogin = true;
     }, error => {
+      this.wasFailedLogin = true;
       this.alertifyService.error(error);
     });
   }
