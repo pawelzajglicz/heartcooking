@@ -13,7 +13,7 @@
   </div>
 
   <div class="navigation__menu" *ngIf="loggedIn()">
-    <button mat-button [matMenuTriggerFor]="menu" class="menu-button">Menu</button>
+    <button mat-button [matMenuTriggerFor]="menu" class="menu-button">Witaj {{authService.decodedToken?.unique_name | titlecase}}</button>
 
     <mat-menu #menu="matMenu" yPosition="below">
       <button mat-menu-item><i class="fa fa-user menu-item-icon"></i>Edytuj Profil</button>

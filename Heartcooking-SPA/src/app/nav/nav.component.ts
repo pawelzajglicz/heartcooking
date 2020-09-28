@@ -16,7 +16,7 @@ export class NavComponent implements OnInit {
   wasFailedLogin = false;
 
   constructor(private alertifyService: AlertifyService,
-              private authService: AuthService,
+              public authService: AuthService,
               private router: Router) { }
 
   ngOnInit() {

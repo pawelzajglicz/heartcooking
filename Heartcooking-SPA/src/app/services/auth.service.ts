@@ -15,6 +15,7 @@ export class AuthService {
 
   baseUrl = environment.baseUrl + 'auth/';
   jwtHelper = new JwtHelperService();
+  decodedToken: any;
 
   constructor(private http: HttpClient) { }
 
@@ -25,6 +26,8 @@ export class AuthService {
 
           if (user) {
             localStorage.setItem('token', user.token);
+            this.decodedToken = this.jwtHelper.decodeToken(user.token);
+            console.log(this.decodedToken);
           }
         })
       );
