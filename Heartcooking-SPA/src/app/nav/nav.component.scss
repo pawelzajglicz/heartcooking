@@ -44,15 +44,29 @@ a {
   cursor: default;
 }
 
+::ng-deep .mat-menu-item {
+  color: $ruby;
+  font-family: $baloo;
+  font-weight: 400;
+}
+
+::ng-deep .mat-menu-panel {
+  background: $light-green;
+  border: 3px solid $puce;
+  color: $dark-blue;
+}
+
 .menu-button {
   height: 40px;
   min-width: 80px;
 
-  background-color: lightgreen;
+  background-color: $light-green;
   border-radius: 5px;
   color: $dark-blue;
+  cursor: pointer;
   font-family: $arima;
   font-weight: 500;
+  margin-right: 10px;
 }
 
 .menu-item-icon {
