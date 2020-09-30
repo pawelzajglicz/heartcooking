@@ -1,4 +1,3 @@
-import { ErrorInterceptorProvider } from './services/error.interceptor';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
@@ -14,6 +13,8 @@ import { ProductComponent } from './product/product.component';
 import { RegisterComponent } from './register/register.component';
 import { appRoutes } from './routes';
 import { AuthService } from './services/auth.service';
+import { EnvConfigService } from './services/env-config.service';
+import { ErrorInterceptorProvider } from './services/error.interceptor';
 import { UnderConstructionComponent } from './under-construction/under-construction.component';
 
 @NgModule({
@@ -35,6 +36,7 @@ import { UnderConstructionComponent } from './under-construction/under-construct
    ],
    providers: [
      AuthService,
+     EnvConfigService,
      ErrorInterceptorProvider
    ],
    bootstrap: [

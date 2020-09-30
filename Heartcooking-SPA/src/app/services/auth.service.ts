@@ -3,21 +3,27 @@ import { HttpClient } from '@angular/common/http';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import { map } from 'rxjs/operators';
 
+import { EnvConfigService } from './env-config.service';
 import { UserForLogin } from './../models/user-for-login';
 import { UserForRegister } from './../models/user-for-register';
 import { UserLoginResponse } from './../models/user-login-response';
-import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
 
-  baseUrl = environment.baseUrl + 'auth/';
+  baseUrl: string;
   jwtHelper = new JwtHelperService();
   decodedToken: any;
 
-  constructor(private http: HttpClient) { }
+  constructor(private envConfigService: EnvConfigService,
+              private http: HttpClient) {
+
+                this.envConfigService.getApiUrls$().subscribe((apiUrl: string) => {
+                  this.baseUrl = apiUrl + 'auth/';
+                });
+              }
 
   login(userForLogin: UserForLogin) {
     return this.http.post(this.baseUrl + 'login', userForLogin)
