@@ -23,7 +23,7 @@ export class ErrorInterceptor implements HttpInterceptor {
         }
 
         let serverError = null;
-        if (serverError) {
+        if (error.error) {
           serverError = error.error;
         }
 
