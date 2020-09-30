@@ -17,7 +17,6 @@ export class EnvConfigService {
 
     if (environment.production) {
       this.httpClient.get('assets/env.json').subscribe((envFile: any) => {
-        console.log(envFile);
         this.apiUrlSubjects.next(envFile.baseUrl);
       });
     } else {
