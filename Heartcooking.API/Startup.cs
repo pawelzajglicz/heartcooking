@@ -53,7 +53,7 @@ namespace Heartcooking.API
             services.AddControllers();
             services.AddCors(options => options.AddPolicy("ApiCorsPolicy", builder =>
                 {
-                    builder.WithOrigins("https://heartcooking-front.azurewebsites.net/").AllowAnyMethod().AllowAnyHeader();
+                    builder.WithOrigins("https://heartcooking-front.azurewebsites.net").AllowAnyMethod().AllowAnyHeader();
                 }));
             services.AddDbContext<DataContext>(x => x.UseMySql(Configuration.GetConnectionString("DefaultConnection")));
             services.AddMemoryCache();
