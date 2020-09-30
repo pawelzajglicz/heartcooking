@@ -51,7 +51,10 @@ namespace Heartcooking.API
                     };
                 });
             services.AddControllers();
-            services.AddCors();
+            services.AddCors(options => options.AddPolicy("ApiCorsPolicy", builder =>
+                {
+                    builder.WithOrigins("https://heartcooking-front.azurewebsites.net/").AllowAnyMethod().AllowAnyHeader();
+                }));
             services.AddDbContext<DataContext>(x => x.UseMySql(Configuration.GetConnectionString("DefaultConnection")));
             services.AddMemoryCache();
             services.AddScoped<IAuthRepository, AuthRepository>();
@@ -92,6 +95,8 @@ namespace Heartcooking.API
             app.UseCors(x => x.AllowAnyOrigin()
                               .AllowAnyMethod()
                               .AllowAnyHeader());
+
+            app.UseCors("ApiCorsPolicy");
 
             app.UseAuthentication();
             app.UseAuthorization();
