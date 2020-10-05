@@ -16,7 +16,7 @@ namespace Heartcooking.API.Models
         public double Sugar { get; set; }
         public bool IsVegan { get; set; }
 
-        public ICollection<Allergen> Allergens { get; set; }
+        public ICollection<ProductAllergen> ProductsAllergens { get; set; }
         public ICollection<Photo> Photos { get; set; }
     }
 }
