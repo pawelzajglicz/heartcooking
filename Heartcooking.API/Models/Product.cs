@@ -17,5 +17,6 @@ namespace Heartcooking.API.Models
         public bool IsVegan { get; set; }
 
         public ICollection<Allergen> Allergens { get; set; }
+        public ICollection<Photo> Photos { get; set; }
     }
 }
