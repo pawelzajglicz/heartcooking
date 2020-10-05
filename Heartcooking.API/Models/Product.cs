@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+
 namespace Heartcooking.API.Models
 {
     public class Product : BaseEntity
@@ -13,5 +15,7 @@ namespace Heartcooking.API.Models
         public double SaturatedFat { get; set; }
         public double Sugar { get; set; }
         public bool IsVegan { get; set; }
+
+        public ICollection<Allergen> Allergens { get; set; }
     }
 }
