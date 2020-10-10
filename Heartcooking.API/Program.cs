@@ -1,8 +1,13 @@
 using Autofac.Extensions.DependencyInjection;
+using Data;
+using Heartcooking.API.Data;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using NLog.Web;
+using System;
 
 namespace Heartcooking.API
 {
@@ -12,7 +17,29 @@ namespace Heartcooking.API
         {
             var logger = NLog.Web.NLogBuilder.ConfigureNLog("nlog.config").GetCurrentClassLogger();
 
-            CreateHostBuilder(args).Build().Run();
+            var host = CreateHostBuilder(args).Build();
+            PrepareDatabase(logger, host);
+
+            host.Run();
+        }
+
+        private static void PrepareDatabase(NLog.Logger logger, IHost host)
+        {
+            using (var scope = host.Services.CreateScope())
+            {
+                var services = scope.ServiceProvider;
+                try
+                {
+                    var context = services.GetRequiredService<DataContext>();
+                    context.Database.Migrate();
+                    Seed.SeedProducts(context);
+                }
+                catch (Exception e)
+                {
+                    Console.Write(e.StackTrace);
+                    logger.Error(e, "An error occured during migration");
+                }
+            }
         }
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>

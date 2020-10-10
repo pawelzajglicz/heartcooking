@@ -1,0 +1,167 @@
+[
+    {
+        "Name": "Jajko",
+        "Description": "Jajko kurze",
+        "Carbohydrates": 1.1,
+        "Fat": 11,
+        "Fiber": 0,
+        "Kilocalories": 51,
+        "Protein": 13,
+        "Salt": 0.36,
+        "SaturatedFat": 3.3,
+        "Sugar": 1.1,
+        "IsVegan": false,
+        "Photos" : [
+            {
+                "Url": "https://cdn.pixabay.com/photo/2016/05/05/15/29/egg-1374141_960_720.jpg",
+                "IsMain": true,
+                "Description": "Dwa jajka kurze"
+            },
+            {
+                "Url": "https://cdn.pixabay.com/photo/2016/03/26/22/58/food-1281742_960_720.jpg",
+                "IsMain": false,
+                "Description": "Jajko kurze"
+            }
+        ]
+    },
+    {
+        "Name": "Mleko 2%",
+        "Description": "Mleko z 2% zawartością tłuszczu",
+        "Carbohydrates": 4.9,
+        "Fat": 2,
+        "Fiber": 0,
+        "Kilocalories": 51,
+        "Protein": 3.3,
+        "Salt": 0.1,
+        "SaturatedFat": 1.2,
+        "Sugar": 4.9,
+        "IsVegan": false,
+        "Photos" : [
+            {
+                "Url": "https://cdn.pixabay.com/photo/2016/12/06/18/27/milk-1887234_960_720.jpg",
+                "IsMain": true,
+                "Description": "Mleko"
+            }
+        ]
+    },
+    {
+        "Name": "Mąka",
+        "Description": "Mąka pszenna",
+        "Carbohydrates": 76,
+        "Fat": 1,
+        "Fiber": 2.7,
+        "Kilocalories": 364,
+        "Protein": 10,
+        "Salt": null,
+        "SaturatedFat": 0.2,
+        "Sugar": 0.3,
+        "IsVegan": true,
+        "Photos" : [
+            {
+                "Url": "https://cdn.pixabay.com/photo/2016/07/19/15/27/flour-1528338_960_720.jpg",
+                "IsMain": true,
+                "Description": "Mąka na łanach zboża"
+            }
+        ]
+    },
+    {
+        "Name": "Jagody",
+        "Description": "Jagody",
+        "Carbohydrates": 12.3,
+        "Fat": 0.76,
+        "Fiber": 2.6,
+        "Kilocalories": 61,
+        "Protein": 1.22,
+        "Salt": null,
+        "SaturatedFat": 0,
+        "Sugar": 6.46,
+        "IsVegan": true,
+        "Photos" : [
+            {
+                "Url": "https://cdn.pixabay.com/photo/2015/03/26/09/40/blueberries-690072_960_720.jpg",
+                "IsMain": true,
+                "Description": "Jagody"
+            }
+        ]
+    },
+    {
+        "Name": "Banany",
+        "Description": "Banany",
+        "Carbohydrates": 22.84,
+        "Fat": 0.33,
+        "Fiber": 2.6,
+        "Kilocalories": 89,
+        "Protein": 1.1,
+        "Salt": null,
+        "SaturatedFat": 0.1,
+        "Sugar": 12.2,
+        "IsVegan": true,
+        "Photos" : [
+            {
+                "Url": "https://cdn.pixabay.com/photo/2016/01/03/17/59/bananas-1119790_960_720.jpg",
+                "IsMain": true,
+                "Description": "Banany"
+            }
+        ]
+    },
+    {
+        "Name": "Jogurt",
+        "Description": "jogurt naturalny",
+        "Carbohydrates": 3.6,
+        "Fat": 0.4,
+        "Fiber": 0,
+        "Kilocalories": 58,
+        "Protein": 10,
+        "Salt": null,
+        "SaturatedFat": 0.1,
+        "Sugar": 3.2,
+        "IsVegan": false,
+        "Photos" : [
+            {
+                "Url": "https://cdn.pixabay.com/photo/2016/12/22/10/46/raspberries-1925178_960_720.jpg",
+                "IsMain": true,
+                "Description": "Jogurt z malinami"
+            }
+        ]
+    },
+    {
+        "Name": "Wieprzowina",
+        "Description": "Mięso wieprzowe",
+        "Carbohydrates": 0,
+        "Fat": 53,
+        "Fiber": 0,
+        "Kilocalories": 517,
+        "Protein": 9,
+        "Salt": null,
+        "SaturatedFat": 19,
+        "Sugar": 0,
+        "IsVegan": false,
+        "Photos" : [
+            {
+                "Url": "https://cdn.pixabay.com/photo/2016/10/17/15/08/minced-meat-1747910_960_720.jpg",
+                "IsMain": true,
+                "Description": "Mielona wieprzowina"
+            }
+        ]
+    },
+    {
+        "Name": "Masło",
+        "Description": "Masło",
+        "Carbohydrates": 0.1,
+        "Fat": 81,
+        "Fiber": 0,
+        "Kilocalories": 716,
+        "Protein": 0.9,
+        "Salt": null,
+        "SaturatedFat": 51,
+        "Sugar": 0.1,
+        "IsVegan": false,
+        "Photos" : [
+            {
+                "Url": "https://cdn.pixabay.com/photo/2016/06/11/04/09/butter-1449453_960_720.jpg",
+                "IsMain": true,
+                "Description": "Kostki masła"
+            }
+        ]
+    }
+]
