@@ -11,7 +11,7 @@ namespace Heartcooking.API.Models
         public double Fiber { get; set; }
         public double Kilocalories { get; set; }
         public double Protein { get; set; }
-        public double Salt { get; set; }
+        public double? Salt { get; set; }
         public double SaturatedFat { get; set; }
         public double Sugar { get; set; }
         public bool IsVegan { get; set; }
