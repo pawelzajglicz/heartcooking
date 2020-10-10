@@ -1,8 +1,6 @@
-using System;
+using Heartcooking.API.Models;
 using System.Security.Cryptography;
 using System.Threading.Tasks;
-using Data;
-using Heartcooking.API.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace Heartcooking.API.Data

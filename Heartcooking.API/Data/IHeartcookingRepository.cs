@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using Heartcooking.API.Models;
 
-namespace Data
+namespace Heartcooking.API.Data
 {
     public interface IHeartcookingRepository
     {

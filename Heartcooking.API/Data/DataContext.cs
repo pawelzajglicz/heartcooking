@@ -1,7 +1,7 @@
 using Heartcooking.API.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace Data
+namespace Heartcooking.API.Data
 {
     public class DataContext : DbContext
     {

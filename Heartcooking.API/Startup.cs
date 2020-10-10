@@ -5,7 +5,6 @@ using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using Autofac;
-using Data;
 using Heartcooking.API.Data;
 using Heartcooking.API.Helpers;
 using Heartcooking.API.Services;

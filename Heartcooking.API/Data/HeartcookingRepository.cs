@@ -6,7 +6,7 @@ using Microsoft.Extensions.Caching.Memory;
 using Microsoft.Extensions.Logging;
 using Heartcooking.API.Models;
 
-namespace Data
+namespace Heartcooking.API.Data
 {
     public class HeartcookingRepository : IHeartcookingRepository
     {

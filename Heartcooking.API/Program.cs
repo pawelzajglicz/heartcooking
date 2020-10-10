@@ -1,5 +1,4 @@
 using Autofac.Extensions.DependencyInjection;
-using Data;
 using Heartcooking.API.Data;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;

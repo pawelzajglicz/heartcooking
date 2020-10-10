@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
 
-using Data;
+using Heartcooking.API.Data;
 using Heartcooking.API.Models;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
