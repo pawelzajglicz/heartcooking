@@ -5,6 +5,7 @@ using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using Autofac;
+using AutoMapper;
 using Heartcooking.API.Data;
 using Heartcooking.API.Helpers;
 using Heartcooking.API.Services;
@@ -53,6 +54,7 @@ namespace Heartcooking.API
             {
                 options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
             });
+            services.AddAutoMapper(typeof(HeartcookingRepository).Assembly);
             services.AddCors();
             services.AddDbContext<DataContext>(x => x.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
             services.AddMemoryCache();
