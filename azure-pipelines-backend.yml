@@ -50,7 +50,7 @@ steps:
     arguments: '--configuration Release -o $(Build.ArtifactStagingDirectory)/Heartcooking.API'
 
 - script: |
-   dotnet tool install --global dotnet-ef
+   dotnet tool install --global dotnet-ef --version 3.1.6
    
   displayName: 'Command Line Script'
 
