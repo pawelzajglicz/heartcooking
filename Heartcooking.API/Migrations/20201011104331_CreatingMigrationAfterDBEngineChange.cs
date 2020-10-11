@@ -1,78 +1,18 @@
 ﻿using System;
-using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Heartcooking.API.Migrations
 {
-    public partial class ExtendingProductClass : Migration
+    public partial class CreatingMigrationAfterDBEngineChange : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.AddColumn<double>(
-                name: "Carbohydrates",
-                table: "Products",
-                nullable: false,
-                defaultValue: 0.0);
-
-            migrationBuilder.AddColumn<string>(
-                name: "Description",
-                table: "Products",
-                nullable: true);
-
-            migrationBuilder.AddColumn<double>(
-                name: "Fat",
-                table: "Products",
-                nullable: false,
-                defaultValue: 0.0);
-
-            migrationBuilder.AddColumn<double>(
-                name: "Fiber",
-                table: "Products",
-                nullable: false,
-                defaultValue: 0.0);
-
-            migrationBuilder.AddColumn<bool>(
-                name: "IsVegan",
-                table: "Products",
-                nullable: false,
-                defaultValue: false);
-
-            migrationBuilder.AddColumn<double>(
-                name: "Kilocalories",
-                table: "Products",
-                nullable: false,
-                defaultValue: 0.0);
-
-            migrationBuilder.AddColumn<double>(
-                name: "Protein",
-                table: "Products",
-                nullable: false,
-                defaultValue: 0.0);
-
-            migrationBuilder.AddColumn<double>(
-                name: "Salt",
-                table: "Products",
-                nullable: false,
-                defaultValue: 0.0);
-
-            migrationBuilder.AddColumn<double>(
-                name: "SaturatedFat",
-                table: "Products",
-                nullable: false,
-                defaultValue: 0.0);
-
-            migrationBuilder.AddColumn<double>(
-                name: "Sugar",
-                table: "Products",
-                nullable: false,
-                defaultValue: 0.0);
-
             migrationBuilder.CreateTable(
                 name: "Allergens",
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
-                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     Name = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
@@ -81,11 +21,49 @@ namespace Heartcooking.API.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Products",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Name = table.Column<string>(nullable: true),
+                    Description = table.Column<string>(nullable: true),
+                    Carbohydrates = table.Column<double>(nullable: false),
+                    Fat = table.Column<double>(nullable: false),
+                    Fiber = table.Column<double>(nullable: false),
+                    Kilocalories = table.Column<double>(nullable: false),
+                    Protein = table.Column<double>(nullable: false),
+                    Salt = table.Column<double>(nullable: true),
+                    SaturatedFat = table.Column<double>(nullable: false),
+                    Sugar = table.Column<double>(nullable: false),
+                    IsVegan = table.Column<bool>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Products", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Users",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Username = table.Column<string>(nullable: true),
+                    PasswordHash = table.Column<byte[]>(nullable: true),
+                    PasswordSalt = table.Column<byte[]>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Users", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Photos",
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
-                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     Url = table.Column<string>(nullable: true),
                     Description = table.Column<string>(nullable: true),
                     DateAdded = table.Column<DateTime>(nullable: false),
@@ -147,47 +125,13 @@ namespace Heartcooking.API.Migrations
                 name: "ProductsAllergens");
 
             migrationBuilder.DropTable(
+                name: "Users");
+
+            migrationBuilder.DropTable(
                 name: "Allergens");
 
-            migrationBuilder.DropColumn(
-                name: "Carbohydrates",
-                table: "Products");
-
-            migrationBuilder.DropColumn(
-                name: "Description",
-                table: "Products");
-
-            migrationBuilder.DropColumn(
-                name: "Fat",
-                table: "Products");
-
-            migrationBuilder.DropColumn(
-                name: "Fiber",
-                table: "Products");
-
-            migrationBuilder.DropColumn(
-                name: "IsVegan",
-                table: "Products");
-
-            migrationBuilder.DropColumn(
-                name: "Kilocalories",
-                table: "Products");
-
-            migrationBuilder.DropColumn(
-                name: "Protein",
-                table: "Products");
-
-            migrationBuilder.DropColumn(
-                name: "Salt",
-                table: "Products");
-
-            migrationBuilder.DropColumn(
-                name: "SaturatedFat",
-                table: "Products");
-
-            migrationBuilder.DropColumn(
-                name: "Sugar",
-                table: "Products");
+            migrationBuilder.DropTable(
+                name: "Products");
         }
     }
 }
