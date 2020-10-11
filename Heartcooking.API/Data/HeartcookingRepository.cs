@@ -28,7 +28,7 @@ namespace Heartcooking.API.Data
         public async Task<Product> GetProduct(int id)
         {
             logger.LogTrace($"Fetch product with id {id}");
-            Product product = await context.Products.FirstOrDefaultAsync(product => product.Id == id);
+            Product product = await context.Products.Include(p => p.Photos).Include(p => p.ProductsAllergens).FirstOrDefaultAsync(product => product.Id == id);
 
             return product;
         }
@@ -40,7 +40,7 @@ namespace Heartcooking.API.Data
             if (products == null)
             {
                 logger.LogTrace($"Fetch products from context");
-                products = await context.Products.ToListAsync();
+                products = await context.Products.Include(p => p.Photos).Include(p => p.ProductsAllergens).ToListAsync();
                 cache.Set(productsCacheKey, products, TimeSpan.FromMinutes(1));
             }
             else
