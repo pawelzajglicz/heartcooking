@@ -5,6 +5,7 @@ namespace Heartcooking.API.Dtos
 {
     public class ProductForDetailedDto
     {
+        public int Id { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
         public double Carbohydrates { get; set; }
@@ -17,7 +18,7 @@ namespace Heartcooking.API.Dtos
         public double Sugar { get; set; }
         public bool IsVegan { get; set; }
         public string PhotoUrl { get; set; }
-        public ICollection<ProductAllergen> ProductsAllergens { get; set; }
-        public ICollection<Photo> Photos { get; set; }
+        public ICollection<AllergenForDetailedDto> Allergens { get; set; }
+        public ICollection<PhotoForDetailedDto> Photos { get; set; }
     }
 }
