@@ -28,7 +28,7 @@ namespace Heartcooking.API.Data
         public async Task<Product> GetProduct(int id)
         {
             logger.LogTrace($"Fetch product with id {id}");
-            Product product = await context.Products.Include(p => p.Photos).Include(p => p.ProductsAllergens).FirstOrDefaultAsync(product => product.Id == id);
+            Product product = await context.Products.Include(p => p.Photos).Include(p => p.ProductsAllergens).ThenInclude(pa => pa.Allergen).FirstOrDefaultAsync(product => product.Id == id);
 
             return product;
         }
