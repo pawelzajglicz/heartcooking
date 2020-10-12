@@ -10,7 +10,6 @@ using Heartcooking.API.Models;
 
 namespace Controllers
 {
-    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class ProductsController : ControllerBase
