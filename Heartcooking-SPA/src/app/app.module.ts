@@ -10,6 +10,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { NavComponent } from './nav/nav.component';
 import { ProductComponent } from './product/product.component';
+import { ProductsListComponent } from './products-list/products-list.component';
 import { RegisterComponent } from './register/register.component';
 import { appRoutes } from './routes';
 import { AuthService } from './services/auth.service';
@@ -24,7 +25,8 @@ import { UnderConstructionComponent } from './under-construction/under-construct
       ProductComponent,
       UnderConstructionComponent,
       RegisterComponent,
-      HomeComponent
+      HomeComponent,
+      ProductsListComponent
    ],
    imports: [
       BrowserAnimationsModule,
