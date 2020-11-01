@@ -17,6 +17,7 @@ import { appRoutes } from './routes';
 import { AuthService } from './services/auth.service';
 import { EnvConfigService } from './services/env-config.service';
 import { ErrorInterceptorProvider } from './services/error.interceptor';
+import { ShoppingListComponent } from './shopping-list/shopping-list.component';
 import { UnderConstructionComponent } from './under-construction/under-construction.component';
 
 @NgModule({
@@ -28,6 +29,7 @@ import { UnderConstructionComponent } from './under-construction/under-construct
       ProductsListComponent,
       RecipesComponent,
       RegisterComponent,
+      ShoppingListComponent,
       UnderConstructionComponent
    ],
    imports: [
