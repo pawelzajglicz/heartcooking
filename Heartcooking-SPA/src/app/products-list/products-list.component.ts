@@ -22,8 +22,6 @@ export class ProductsListComponent implements OnInit {
 
   loadProducts() {
     this.productService.getProducts().subscribe((products: Product[]) => {
-      console.log(products);
-      console.log('products');
       this.products = products;
     }, error => {
       this.alertify.error(error);
