@@ -11,6 +11,7 @@ import { HomeComponent } from './home/home.component';
 import { NavComponent } from './nav/nav.component';
 import { ProductComponent } from './product/product.component';
 import { ProductsListComponent } from './products-list/products-list.component';
+import { RecipesComponent } from './recipes/recipes.component';
 import { RegisterComponent } from './register/register.component';
 import { appRoutes } from './routes';
 import { AuthService } from './services/auth.service';
@@ -24,6 +25,7 @@ import { UnderConstructionComponent } from './under-construction/under-construct
       NavComponent,
       ProductComponent,
       UnderConstructionComponent,
+      RecipesComponent,
       RegisterComponent,
       HomeComponent,
       ProductsListComponent
