@@ -22,13 +22,13 @@ import { UnderConstructionComponent } from './under-construction/under-construct
 @NgModule({
    declarations: [
       AppComponent,
+      HomeComponent,
       NavComponent,
       ProductComponent,
-      UnderConstructionComponent,
+      ProductsListComponent,
       RecipesComponent,
       RegisterComponent,
-      HomeComponent,
-      ProductsListComponent
+      UnderConstructionComponent
    ],
    imports: [
       BrowserAnimationsModule,
