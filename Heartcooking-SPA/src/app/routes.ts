@@ -12,6 +12,6 @@ export const appRoutes: Routes = [
   { path: 'products', component: ProductsListComponent },
   { path: 'recipes', component: RecipesComponent },
   { path: 'register', component: RegisterComponent },
-  { path: '/shopping-list', component: ShoppingListComponent },
+  { path: 'shopping-list', component: ShoppingListComponent },
   { path: '**', redirectTo: 'home', pathMatch: 'full' }
 ];
