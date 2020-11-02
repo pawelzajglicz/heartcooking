@@ -18,6 +18,7 @@ import { EnvConfigService } from './services/env-config.service';
 import { ErrorInterceptorProvider } from './services/error.interceptor';
 import { ShoppingListComponent } from './shopping-list/shopping-list.component';
 import { UnderConstructionComponent } from './under-construction/under-construction.component';
+import { ProductCardComponent } from './products/product-card/product-card.component';
 
 @NgModule({
    declarations: [
@@ -28,7 +29,8 @@ import { UnderConstructionComponent } from './under-construction/under-construct
       RecipesComponent,
       RegisterComponent,
       ShoppingListComponent,
-      UnderConstructionComponent
+      UnderConstructionComponent,
+      ProductCardComponent
    ],
    imports: [
       BrowserAnimationsModule,
