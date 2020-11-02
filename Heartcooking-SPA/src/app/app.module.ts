@@ -9,7 +9,6 @@ import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { NavComponent } from './nav/nav.component';
-import { ProductComponent } from './products/product/product.component';
 import { ProductsListComponent } from './products/products-list/products-list.component';
 import { RecipesComponent } from './recipes/recipes.component';
 import { RegisterComponent } from './register/register.component';
@@ -25,7 +24,6 @@ import { UnderConstructionComponent } from './under-construction/under-construct
       AppComponent,
       HomeComponent,
       NavComponent,
-      ProductComponent,
       ProductsListComponent,
       RecipesComponent,
       RegisterComponent,

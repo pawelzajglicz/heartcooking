@@ -8,7 +8,6 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { NavComponent } from './nav/nav.component';
-import { ProductComponent } from './products/product/product.component';
 import { RegisterComponent } from './register/register.component';
 import { UnderConstructionComponent } from './under-construction/under-construction.component';
 
@@ -19,7 +18,6 @@ describe('AppComponent', () => {
         AppComponent,
         HomeComponent,
         NavComponent,
-        ProductComponent,
         RegisterComponent,
         UnderConstructionComponent
       ],
