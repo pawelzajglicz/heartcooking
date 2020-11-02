@@ -1,6 +1,6 @@
 <div class="products-list-container">
   <p *ngFor="let product of products">
-    {{product.name}}
+    <app-product-card [product]="product"></app-product-card>
   </p>
 </div>
 
