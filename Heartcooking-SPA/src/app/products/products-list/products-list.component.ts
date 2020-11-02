@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Product } from '../models/product';
-import { AlertifyService } from './../services/alertify.service';
-import { ProductService } from './../services/product.service';
+import { Product } from '../../models/product';
+import { AlertifyService } from './../../services/alertify.service';
+import { ProductService } from './../../services/product.service';
 
 
 @Component({
