@@ -1,7 +1,7 @@
 import { Routes } from '@angular/router';
 
 import { HomeComponent } from './home/home.component';
-import { ProductsListComponent } from './products-list/products-list.component';
+import { ProductsListComponent } from './products/products-list/products-list.component';
 import { RecipesComponent } from './recipes/recipes.component';
 import { RegisterComponent } from './register/register.component';
 import { ShoppingListComponent } from './shopping-list/shopping-list.component';
