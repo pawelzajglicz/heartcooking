@@ -9,6 +9,7 @@ import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { NavComponent } from './nav/nav.component';
+import { ProductCardComponent } from './products/product-card/product-card.component';
 import { ProductsListComponent } from './products/products-list/products-list.component';
 import { RecipesComponent } from './recipes/recipes.component';
 import { RegisterComponent } from './register/register.component';
@@ -18,19 +19,18 @@ import { EnvConfigService } from './services/env-config.service';
 import { ErrorInterceptorProvider } from './services/error.interceptor';
 import { ShoppingListComponent } from './shopping-list/shopping-list.component';
 import { UnderConstructionComponent } from './under-construction/under-construction.component';
-import { ProductCardComponent } from './products/product-card/product-card.component';
 
 @NgModule({
    declarations: [
       AppComponent,
       HomeComponent,
       NavComponent,
+      ProductCardComponent,
       ProductsListComponent,
       RecipesComponent,
       RegisterComponent,
       ShoppingListComponent,
-      UnderConstructionComponent,
-      ProductCardComponent
+      UnderConstructionComponent
    ],
    imports: [
       BrowserAnimationsModule,
