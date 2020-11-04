@@ -9,7 +9,7 @@
     <a class="navigation__link" [routerLink]="['/recipes']" routerLinkActive="router-link-active">Przepisy</a>
     <a class="navigation__link" [routerLink]="['/products']" routerLinkActive="router-link-active">Produkty</a>
     <a class="navigation__link" [routerLink]="['/shopping-list']" routerLinkActive="router-link-active">Lista zakupów</a>
-    <a class="navigation__link" href="#">Użytkownicy</a>
+    <a class="navigation__link" [routerLink]="['/users']" routerLinkActive="router-link-active">Użytkownicy</a>
   </div>
 
   <div class="navigation__menu" *ngIf="loggedIn()">

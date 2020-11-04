@@ -5,6 +5,8 @@ import { ProductsListComponent } from './products/products-list/products-list.co
 import { RecipesComponent } from './recipes/recipes.component';
 import { RegisterComponent } from './register/register.component';
 import { ShoppingListComponent } from './shopping-list/shopping-list.component';
+import { UsersComponent } from './users/users.component';
+
 
 
 export const appRoutes: Routes = [
@@ -13,5 +15,6 @@ export const appRoutes: Routes = [
   { path: 'recipes', component: RecipesComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'shopping-list', component: ShoppingListComponent },
+  { path: 'users', component: UsersComponent },
   { path: '**', redirectTo: 'home', pathMatch: 'full' }
 ];
