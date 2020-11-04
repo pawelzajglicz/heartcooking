@@ -25,4 +25,9 @@ describe('HomeComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should render title', () => {
+    const compiled = fixture.debugElement.nativeElement;
+    expect(compiled.querySelector('.application-title').textContent).toContain('Heartcooking');
+  });
 });
