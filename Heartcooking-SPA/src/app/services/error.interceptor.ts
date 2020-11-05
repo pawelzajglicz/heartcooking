@@ -22,7 +22,6 @@ export class ErrorInterceptor implements HttpInterceptor {
           }
         }
 
-        console.log(error);
         let serverError = null;
         if (error.error && error.error.type !== 'error') {
           serverError = error.error;

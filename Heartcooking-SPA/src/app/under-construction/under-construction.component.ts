@@ -31,9 +31,7 @@ export class UnderConstructionComponent implements OnInit {
   state = 'visible';
 
   changeVisibility(): void {
-    console.log(this.state);
     (this.state === 'hide') ? this.state = 'visible' : this.state = 'hide';
-    console.log(this.state);
   }
 
   constructor() { }
