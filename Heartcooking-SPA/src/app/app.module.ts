@@ -42,6 +42,9 @@ export function tokenGetter() {
       UnderConstructionComponent,
       UsersComponent
    ],
+   exports: [
+    RouterModule
+   ],
    imports: [
       BrowserAnimationsModule,
       BrowserModule,
