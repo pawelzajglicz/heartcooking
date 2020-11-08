@@ -12,6 +12,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { NavComponent } from './nav/nav.component';
 import { ProductCardComponent } from './products/product-card/product-card.component';
+import { ProductDetailsComponent } from './products/product-details/product-details.component';
 import { ProductsListComponent } from './products/products-list/products-list.component';
 import { RecipesComponent } from './recipes/recipes.component';
 import { RegisterComponent } from './register/register.component';
@@ -33,6 +34,7 @@ export function tokenGetter() {
       HomeComponent,
       NavComponent,
       ProductCardComponent,
+      ProductDetailsComponent,
       ProductsListComponent,
       RecipesComponent,
       RegisterComponent,
