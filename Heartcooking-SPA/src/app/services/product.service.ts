@@ -5,12 +5,6 @@ import { Injectable, OnInit } from '@angular/core';
 
 import { EnvConfigService } from './env-config.service';
 
-const httpOptions = {
-  headers: new HttpHeaders({
-    'Authorization': 'Bearer ' + localStorage.getItem('token')
-  })
-};
-
 @Injectable({
   providedIn: 'root'
 })
@@ -28,11 +22,11 @@ export class ProductService {
 
   getProducts(): Observable<Product[]> {
 
-    return this.http.get<Product[]>(this.baseUrl + 'products', httpOptions);
+    return this.http.get<Product[]>(this.baseUrl + 'products');
   }
 
   getProduct(id: number | string): Observable<Product> {
 
-    return this.http.get<Product>(this.baseUrl + 'products/' + id, httpOptions);
+    return this.http.get<Product>(this.baseUrl + 'products/' + id);
   }
 }

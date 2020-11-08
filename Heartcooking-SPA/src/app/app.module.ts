@@ -1,10 +1,12 @@
 import { HttpClientModule } from '@angular/common/http';
+import { tokenName } from '@angular/compiler';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { MatMenuModule } from '@angular/material/menu';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
+import { JwtModule } from '@auth0/angular-jwt';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -20,6 +22,10 @@ import { ErrorInterceptorProvider } from './services/error.interceptor';
 import { ShoppingListComponent } from './shopping-list/shopping-list.component';
 import { UnderConstructionComponent } from './under-construction/under-construction.component';
 import { UsersComponent } from './users/users.component';
+
+export function tokenGetter() {
+  return localStorage.getItem('token');
+}
 
 @NgModule({
    declarations: [
@@ -39,6 +45,13 @@ import { UsersComponent } from './users/users.component';
       BrowserModule,
       FormsModule,
       HttpClientModule,
+      JwtModule.forRoot({
+        config: {
+          tokenGetter,
+          allowedDomains: ['localhost:5000'],
+          disallowedRoutes: ['localhost:5000/api/auth']
+        }
+      }),
       MatMenuModule,
       RouterModule.forRoot(appRoutes)
    ],
