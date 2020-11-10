@@ -1,8 +1,15 @@
 # Heartcooking
+
+
+## Project temporarily abandoned due to change of learn priorities <br><br>
+
+
 A project to improve skills at ASP.NET Core and Angular <br>
 This will be a social web app to sharing cooking recipes with friends <br>
 It will also allow to calculate kcals, proteins, etc. for meals <br>
 One of the features will be creating shopping list from chosen meals  <br>
+
+
 
 ## Used technologies:
 - ASP.NET Core 3.1
@@ -13,6 +20,7 @@ One of the features will be creating shopping list from chosen meals  <br>
 - CSS
 - Azure DevOps
 - Azure Cloud
+
 
 ## Builds Statuses on Azure Pipeline:
 
@@ -36,8 +44,8 @@ One of the features will be creating shopping list from chosen meals  <br>
 
 <br>
 
-## Link to developer version of application deployed on Azure
-[Early developer version of application](https://heartcooking-front.azurewebsites.net)
+~~Link to developer version of application deployed on Azure~~<br>
+~~[Early developer version of application](https://heartcooking-front.azurewebsites.net)~~
 
 <br>
 
